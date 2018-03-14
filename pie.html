@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "census";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql2 = "select * from Occupation O, individuals I where O.odesc = 'thief' and I.oid=O.oid";
+$result2=mysqli_query($conn,$sql2);
+  $rowcount2=mysqli_num_rows($result2);
+  
+$sql3 = "select * from Occupation O, individuals I where odesc = 'engineer' and I.oid=O.oid";
+$result3=mysqli_query($conn,$sql3);
+  $rowcount3=mysqli_num_rows($result3);
+  
+$sql4 = "select * from Occupation O, individuals I where odesc = 'government employee' and I.oid=O.oid";
+$result4=mysqli_query($conn,$sql4);
+  $rowcount4=mysqli_num_rows($result4);
+ 	mysqli_free_result($result2);
+	mysqli_free_result($result3);
+	mysqli_free_result($result4);
+  
+$conn->close();
+      echo" $rowcount2, $rowcount3, $rowcount4";
+?>     
+	 function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['work', ' per 100'],
+          ['governemnt employee',  $rowcount2 ],
+          ['sportsman',      $rowcount3],
+          ['thief',  $rowcount4]
+        ]);
+
+        var options = {
+          title: 'Occupations Percentile'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+	 
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

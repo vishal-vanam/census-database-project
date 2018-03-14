@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page1</title>
+<style>
+body {margin:0;
+   
+   background-repeat: no-repeat;
+      background-position: bottom;
+	  margin-right: 300px;
+    background-color: #cccccc;}
+	
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 30px 40px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navcore a {
+  float: center;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 30px 40px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#push {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+	.boxes{
+	width:50%;
+	float:left;
+	}
+	.boxes1{
+	width:50%;
+	float:right;
+	}
+button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+select,option{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+</style>
+</head>
+<body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>`
+<div class="navbar">
+  <a href="mail.html">Contact Us</a>
+  <a href="usersignup.html">User</a>
+  <a href="adminsignup.html">Admin</a>
+  <a href="login.html">Home</a>
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="content.html">Content</a>
+  <a href="service.html">Services</a>
+  <a href="data.php">Data</a>
+</div>
+  <div id="push">
+    <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">About&#9776; </span>
+</div>
+</div>
+<form action="occupationdata.php" method="post">
+ <fieldset>
+    <legend><h1>Personal information:</h1></legend>
+	<h2 style="color:blue;"><b>Occupation Updation</b></h2>
+	
+
+<br><h2>Occupation</h2>
+<select name="occ">
+	<option value="1"><h2>Student</h2></option>
+	<option value="2">Teacher</option>
+	<option value="3">Research Scientist</option>
+	<option value="4">Police</option>
+	<option value="5">Army</option>
+	<option value="6">Government Servant</option>
+	<option value="7">Doctor</option>
+	<option value="8">Sportsman</option>
+	<option value="9">Politician</option>
+	<option value="10">Business Man</option>
+	<option value="11">Engineer</option>
+	<option value="13">Thief</option>
+	<option value="12">Others</option>
+</select>
+<h2>first name</h2>
+<input type="text" name="firstname" placeholder="Enter Firstname"><br>
+<h2>last name</h2>
+<input type="text" name="lastname" placeholder="Enter Lastname"><br>
+<h2>Date of Birth</h2>
+<input type="text" name="dob" placeholder="yyyy-mm-dd"><br>
+<button type="submit">Update</submit>
+
+ </fieldset>
+
+ </form>
+
+
+</body>
+</html>
